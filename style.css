@@ -1,0 +1,86 @@
+/* Обнуляем отступы и поля у body для корректного отображения */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Минимальная высота вьюпорта для центрирования */
+    background-color: #151313;
+    /* Цвет фона */
+}
+
+/* Обертка для слайдера */
+.slider-container {
+    position: relative;
+    width: 80%;
+    /* Ширина контейнера слайдера */
+    max-width: 900px;
+    /* Максимальная ширина контейнера слайдера */
+    overflow: hidden;
+    /* Обрезаем содержимое, выходящее за границы контейнера */
+}
+
+/* Контейнер для всех слайдов */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Анимация смены слайдов */
+}
+
+/* Стили для каждого слайда */
+.slide {
+    flex: 0 0 100%;
+    /* Гибкость, чтобы слайды равномерно занимали всю ширину */
+    height: 500px;
+    /* Высота слайда */
+    background-position: center;
+    background-size: cover;
+}
+
+/* Стили для кнопок "предыдущий" и "следующий" слайды */
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Стили для кнопки "предыдущий" слайд */
+.prev-btn {
+    left: 0;
+}
+
+/* Стили для кнопки "следующий" слайд */
+.next-btn {
+    right: 0;
+}
+
+/* Стили для индикаторов слайдов */
+.indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Стили для каждого индикатора */
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #5d5a5a;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Стили для активного индикатора */
+.indicator.active {
+    background-color: #ffffff;
+}
